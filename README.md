@@ -1,0 +1,2 @@
+# appDomotica
+Aplicación domotica
