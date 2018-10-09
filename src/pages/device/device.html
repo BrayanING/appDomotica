@@ -1,0 +1,32 @@
+<!--
+  Generated template for the DevicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Dispositivo</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="create()">
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list padding>
+    <ion-item padding>
+      <ion-input type="text" placeholder="Nombre" [(ngModel)]="device.name" name="title"></ion-input>
+    </ion-item>
+    <ion-item padding>
+      <ion-label stacked>Descripión</ion-label>
+      <ion-textarea type="text" [(ngModel)]="device.description" name="description"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

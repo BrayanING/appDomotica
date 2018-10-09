@@ -1,0 +1,35 @@
+<!--
+  Generated template for the UsersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Usuarios</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToUserPage()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let user of users">
+    <ion-item>
+      <ion-avatar item-start>
+        <img (click)="changePhoto(user)" [src]="user.image" *ngIf="user.image">
+        <img (click)="changePhoto(user)" src="assets/imgs/user.png" *ngIf="!user.image">
+      </ion-avatar>
+      <h2>{{user.name}}</h2>
+      <h3> {{user.email}} </h3>
+      <ion-icon (click)="deleteUser(user)" name="trash" item-end></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

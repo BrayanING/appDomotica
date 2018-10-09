@@ -1,0 +1,27 @@
+page-user-change-photo {
+  .editPhoto {
+    margin: auto;
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 5px double #3B3B3B;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+
+    img {
+        margin: 0px;
+        display: block;
+        height: 290px;
+        width: 295px;
+        border-radius: 50%;
+        border: 0px;
+        background-size: cover;
+        object-fit: cover;
+        background-repeat: no-repeat;
+    
+    }
+  }
+
+}
