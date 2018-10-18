@@ -10,4 +10,7 @@ import { DevicesPage } from './devices';
     IonicPageModule.forChild(DevicesPage),
   ],
 })
-export class DevicesPageModule {}
+export class DevicesPageModule {
+
+  
+}

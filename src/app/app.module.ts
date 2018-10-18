@@ -18,9 +18,6 @@ import { LoginPage } from '../pages/login/login';
 import { UsersPage } from '../pages/users/users';
 import { UserPage } from '../pages/user/user';
 import { DevicePage } from '../pages/device/device';
-import { Camera, CameraOptions } from '@ionic-native/camera';
-import { Base64 } from '@ionic-native/base64';
-
 
 @NgModule({
   declarations: [
@@ -56,9 +53,7 @@ import { Base64 } from '@ionic-native/base64';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NotesProvider,
     AuthProvider,
-    DeviceProvider,
-    Camera,
-    Base64
+    DeviceProvider
   ]
 })
 export class AppModule {}

@@ -18,10 +18,15 @@ import { DeviceProvider } from '../../providers/device/device';
 export class DevicesPage {
 
   devices: any;
+  changeAction: string;
+  sonoff: any;
+  imagen: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private deviceProvider: DeviceProvider) {
     this.devices = [];
+    this.sonoff = {};
     this.getAll();
-
+    this.imagen = "assets/imgs/lamp-off.png";
+    this.changeAction = "OFF";
   }
 
   ionViewDidLoad() {
@@ -52,6 +57,26 @@ export class DevicesPage {
 
   goToDevices() {
     this.navCtrl.push(DevicePage);
+  }
+
+  actionPower(ip) {
+    if(ip && ip !== "") {
+      
+    console.log(ip);
+      if(this.changeAction == "OFF") {
+        this.changeAction = "ON";
+        this.imagen = "assets/imgs/lamp-on.png";
+        this.deviceProvider.connectionDevice(`http://${ip}`, 'On').subscribe((data:any) => {
+          console.log(data);
+        })
+      }else {
+        this.changeAction = "OFF";
+        this.imagen = "assets/imgs/lamp-off.png";
+        this.deviceProvider.connectionDevice(`http://${ip}`, 'Off').subscribe((data:any) => {
+          console.log(data);
+        })
+      }
+    }
   }
 
 }

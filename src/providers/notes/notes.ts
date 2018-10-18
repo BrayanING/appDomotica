@@ -16,23 +16,4 @@ export class NotesProvider {
     console.log('Hello NotesProvider Provider');
   }
 
-  getAll() {
-    return this.http.get(`${ENV.host}/note`);
-  }
-
-  getOne(input) {
-    return this.http.get(`${ENV.host}/steps`, input);
-  }
-
-  create(input){
-    return this.http.post(`${ENV.host}/note`, input);
-  }
-
-  update(input) {
-    return this.http.put(`${ENV.host}/note/${input.id}`, input);
-  }
-  delete(input) {
-    return this.http.delete(`${ENV.host}/note/${input.id}`, input);
-  }
-
 }

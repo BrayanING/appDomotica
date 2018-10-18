@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Events, LoadingController, ToastController } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
 /**
  * Generated class for the LoginPage page.
  *
@@ -8,35 +8,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-  opButtons: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.setPropertyButtons();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-    this.setPropertyButtons();
   }
-
-  setPropertyButtons() {
-    this.opButtons = {};
-    this.opButtons = {
-      isActiveUserPass: false,
-      isActiveRecognitionFace: false,
-      isActiveGif: false,
-      isHideRecognitionPanel: true,
-      isHideLoginPanel: true
-    }
-  }
-
-  
-
 
 }

@@ -12,32 +12,6 @@
 
 </ion-header>
 
-<ion-content padding>
-  <div class="btnContainer">
-    <img *ngIf="!opButtons.isActiveGif" src="assets/imgs/photo2.gif" alt="">
-    <button ion-button full *ngIf="!opButtons.isActiveRecognitionFace">Reconocimiento Facial</button>
-    <button ion-button full *ngIf="!opButtons.isActiveUserPass" (click)="activeOption(1)">Usuario/Contraseña</button>
-  </div>
-
-  <div [hidden]="opButtons.isHideLoginPanel">
-    <ion-list>
-
-      <ion-item>
-        <ion-label stacked>Username</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label stacked>Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      <br>
-      <button ion-button full>Acceder</button>
-      <button ion-button full (click)="activeOption(2)">Regresar</button>
-    </ion-list>
-  </div>
-
-</ion-content>
 <!--
   Generated template for the LoginPage page.
 
@@ -61,6 +35,10 @@
     <div text-center>
       <button ion-button round icon-start padding (click)="openCamera()">
         <ion-icon name="camera"></ion-icon>
+        Identificar
+      </button>
+      <button ion-button round icon-start padding (click)="login()">
+        <ion-icon name="user"></ion-icon>
         Acceder
       </button>
     </div>

@@ -34,5 +34,9 @@ export class DeviceProvider {
     return this.http.delete(`${ENV.host}/device/${input.id}`, input);
   }
 
+  connectionDevice(url, action) {
+    return this.http.get(`${url}/cm?cmnd=Power ${action}`);
+  }
+
 
 }

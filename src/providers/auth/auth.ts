@@ -1,6 +1,6 @@
 import { ENV } from "../../config/config";
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 /*
   Generated class for the AuthProvider provider.
@@ -34,5 +34,10 @@ export class AuthProvider {
     return this.http.delete(`${ENV.host}/user/${input.id}`, input);
   }
 
+  login(input) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(`${ENV.host}/login`, input,  {headers: headers});
+  }
 
 }
